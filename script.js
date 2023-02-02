@@ -34,22 +34,29 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    const computerSelection = computerPlay();
-    let playerSelection = prompt("Rock, Paper or Scissors").toLowerCase().replace(/\s/g, '').trim();
-    if ( playerSelection === "rocks") {
-    playerSelection = "rock";
-  } else if (playerSelection === "papers") {
-    playerSelection = "paper";
-  } 
-    
-    if(playerSelection !== "rock" && playerSelection !== "scissors" && playerSelection !== "paper"){
-       throw new Error("Invalid input. Please enter 'rock', 'paper', or 'scissors'.");
+    try {
+      const computerSelection = computerPlay();
+      let playerSelection = prompt("Rock, Paper or Scissors").toLowerCase().replace(/\s/g, '').trim();
+      if (playerSelection === "rocks") {
+        playerSelection = "rock";
+      } else if (playerSelection === "papers") {
+        playerSelection = "paper";
+      }
+
+      if (playerSelection !== "rock" && playerSelection !== "scissors" && playerSelection !== "paper") {
+        throw new Error("Invalid input. Please enter 'rock', 'paper', or 'scissors'.");
+      }
+
+      console.log(`Player selection is: ${playerSelection} `);
+      console.log(`Computer selection is: ${computerSelection} `);
+      console.log(playRound(playerSelection, computerSelection));
+    } catch (error) {
+      console.error(error.message);
+      i--;
     }
-    
-    console.log(`Player selection is: ${playerSelection} `)
-    console.log(`Computer selection is: ${computerSelection} `);
-    console.log(playRound(playerSelection, computerSelection));
   }
+}
+
   // determine winner of 5 round game  
   if (playerScore > computerScore) {
     message = "Congratulations! You won!!!";
