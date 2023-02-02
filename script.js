@@ -35,7 +35,17 @@ function playRound(playerSelection, computerSelection) {
 function game() {
   for (let i = 0; i < 5; i++) {
     const computerSelection = computerPlay();
-    const playerSelection = prompt("Rock, Paper or Scissors").toLowerCase();
+    let playerSelection = prompt("Rock, Paper or Scissors").toLowerCase().replace(/\s/g, '').trim();
+    if ( playerSelection === "rocks") {
+    playerSelection = "rock";
+  } else if (playerSelection === "papers") {
+    playerSelection = "paper";
+  } 
+    
+    if(playerSelection !== "rock" && playerSelection !== "scissors" && playerSelection !== "paper"){
+       throw new Error("Invalid input. Please enter 'rock', 'paper', or 'scissors'.");
+    }
+    
     console.log(`Player selection is: ${playerSelection} `)
     console.log(`Computer selection is: ${computerSelection} `);
     console.log(playRound(playerSelection, computerSelection));
