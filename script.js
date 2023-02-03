@@ -68,8 +68,7 @@ function game() {
   }
   // Reports the winner 
   console.log("Game is over \nResult: " + message);
-  alert(`Thank You for playing! \nThe score is: \nPlayer: ${playerScore} - Computer: ${computerScore} \n${message}`)
-}
+  alert(`Thank You for playing! \nThe score is: \nPlayer: ${playerScore} - Computer: ${computerScore} \n${message}`);
 
 // Starts the game
 game();
