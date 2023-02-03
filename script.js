@@ -57,6 +57,9 @@ function game() {
   }
 }
 
+// Starts the game
+game();
+
   // determine winner of 5 round game  
   if (playerScore > computerScore) {
     message = "Congratulations! You won!!!";
@@ -70,5 +73,4 @@ function game() {
   console.log("Game is over \nResult: " + message);
   alert(`Thank You for playing! \nThe score is: \nPlayer: ${playerScore} - Computer: ${computerScore} \n${message}`);
 
-// Starts the game
-game();
+
