@@ -46,12 +46,12 @@ function gameRound(playerSelection, computerSelection) {
     return (computerScore += 1);
   } else if (playerSelection == computerSelection) {
     console.log("Round Draw!!");
-    return alert(
+    /*return alert(
       `Round Draw!! Player Selected: ${playerSelection} Computer Selected ${computerSelection}`
-    );
+    );*/
   } else {
     console.log("Wrong Input!! Try Again!");
-    return alert(`Wrong Input!! Try Again!`);
+    //return alert(`Wrong Input!! Try Again!`);
   }
 }
 
@@ -80,33 +80,32 @@ function game() {
     }
   }
   scoreCard();
-  console.log(playerWins);
-  console.log(computerWins);
 }
 
 function scoreCard() {
   if (playerScore > computerScore) {
     console.log(`
-    
     Player Wins the game!
-    Player Score: ${playerScore}
-    Computer Score: ${computerScore}
+    End of 5 Rounds Player Score: ${playerScore}
+    End of 5 Rounds Computer Score: ${computerScore}
     `);
-    return playerScore, playerWins++;
+    return playerWins++;
   } else if (computerScore > playerScore) {
     console.log(`
-
     Computer Wins the game!
-    Computer Score: ${computerScore}
-    Player Score: ${playerScore}
+    End of 5 Rounds Computer Score: ${computerScore}
+    End of 5 Rounds Player Score: ${playerScore}
     `);
-    return computerScore, computerWins++;
+    return computerWins++;
   } else if (playerScore == computerScore) {
-    console.log("Game Draw!");
+    console.log(`
+    Game Draw!
+    Player Wins Total To: ${playerWins}
+    Computer Wins Total To: ${computerWins}
+    `);
     return;
   }
 }
-
 game();
 
 // function game() {
