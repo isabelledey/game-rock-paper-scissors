@@ -84,29 +84,57 @@ function game() {
 
 function scoreCard() {
   if (playerScore > computerScore) {
-    console.log(`
+    console.log(`End Result:
     Player Wins the game!
     End of 5 Rounds Player Score: ${playerScore}
     End of 5 Rounds Computer Score: ${computerScore}
     `);
     return playerWins++;
   } else if (computerScore > playerScore) {
-    console.log(`
+    console.log(`End Result:
     Computer Wins the game!
     End of 5 Rounds Computer Score: ${computerScore}
     End of 5 Rounds Player Score: ${playerScore}
     `);
-    return computerWins++;
+    return playerWins++;
   } else if (playerScore == computerScore) {
-    console.log(`
+    console.log(`End Result:
     Game Draw!
-    Player Wins Total To: ${playerWins}
-    Computer Wins Total To: ${computerWins}
+    End of 5 Rounds Player Wins Total To: ${playerWins}
+    End of 5 Rounds Computer Wins Total To: ${computerWins}
     `);
     return;
   }
 }
-game();
+
+function gameWinner() {
+  let i = 1;
+  while (i <= 3) {
+    if (
+      (playerWins >= 1 || computerWins >= 1) &&
+      (playerWins < 3 || computerWins < 3)
+    ) {
+      game();
+      i++;
+    } else if (playerWins == 3 && playerWins > computerWins) {
+      console.log("Final Winner is Player!");
+    } else if (computerWins == 3 && computerWins > playerWins) {
+      console.log("Final Winner is Computer");
+    }
+  }
+}
+
+function main() {
+  let i = 1;
+  while (i <= 3) {
+    game();
+    i++;
+  }
+}
+
+main();
+console.log(`End of Game Player Wins: ${playerWins}`);
+console.log(`End of Game Computer Wins: ${computerWins}`);
 
 // function game() {
 //   for (i = 1; i <= 5; i++) {
