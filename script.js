@@ -46,14 +46,14 @@ function game() {
       console.log(`Round: ${i}
       Player selection is: ${playerSelection}
       Computer selection is: ${computerSelection}`);
-      //playRound(playerSelection, computerSelection);
+
       console.log(playRound(playerSelection, computerSelection));
     } else if (playerSelection === "papers" || playerSelection === "paper") {
       playerSelection = "paper";
       console.log(`Round: ${i}
       Player selection is: ${playerSelection}
       Computer selection is: ${computerSelection}`);
-      //playRound(playerSelection, computerSelection);
+
       console.log(playRound(playerSelection, computerSelection));
     } else if (
       playerSelection === "scissors" ||
@@ -63,7 +63,7 @@ function game() {
       console.log(`Round: ${i}
       Player selection is: ${playerSelection}
       Computer selection is: ${computerSelection}`);
-      //playRound(playerSelection, computerSelection);
+
       console.log(playRound(playerSelection, computerSelection));
     } else {
       console.log("Invalid Entry");
@@ -71,16 +71,10 @@ function game() {
     }
   }
   scoreCard();
-  //Reports the winner
-  // console.log("Game is over \nResult: " + message);
-  // alert(
-  //   `Thank You for playing! \nThe score is: \nPlayer: ${playerScore} - Computer: ${computerScore} \nTotal Wins by Player: ${playerWins} \nTotal Wins by Computer: ${computerWins} \n${message}`
-  // );
+
   playerScore = 0;
   computerScore = 0;
 }
-
-//debugger;
 
 const playRequest = function () {
   if (playAgain()) {
@@ -98,7 +92,6 @@ const playRequest = function () {
 };
 
 function scoreCard() {
-  // determine winner of 5 round game
   if (playerScore > computerScore) {
     message = "Congratulations! You won!!!";
     console.log(message);
