@@ -43,25 +43,16 @@ function game() {
 
     if (playerSelection === "rocks" || playerSelection === "rock") {
       playerSelection = "rock";
-      console.log(`Round: ${i}
-      Player selection is: ${playerSelection}
-      Computer selection is: ${computerSelection}`);
-      console.log(playRound(playerSelection, computerSelection));
+      roundResultMessage(i, playerSelection, computerSelection);
     } else if (playerSelection === "papers" || playerSelection === "paper") {
       playerSelection = "paper";
-      console.log(`Round: ${i}
-      Player selection is: ${playerSelection}
-      Computer selection is: ${computerSelection}`);
-      console.log(playRound(playerSelection, computerSelection));
+      roundResultMessage(i, playerSelection, computerSelection);
     } else if (
       playerSelection === "scissors" ||
       playerSelection === "scissor"
     ) {
       playerSelection = "scissor";
-      console.log(`Round: ${i}
-      Player selection is: ${playerSelection}
-      Computer selection is: ${computerSelection}`);
-      console.log(playRound(playerSelection, computerSelection));
+     roundResultMessage(i, playerSelection, computerSelection);
     } else {
       console.log("Invalid Entry");
       i--;
@@ -71,6 +62,13 @@ function game() {
 
   playerScore = 0;
   computerScore = 0;
+}
+
+const roundResultMessage = function (i, playerSelection, computerSelection){
+  console.log(`Round: ${i}
+      Player selection is: ${playerSelection}
+      Computer selection is: ${computerSelection}`);
+   console.log(playRound(playerSelection, computerSelection));
 }
 
 const playRequest = function () {
